@@ -1,5 +1,5 @@
 <h1 align="center">
-Itasecoin Explorer [ITASE, ŧ]  
+Itasecoin Explorer
 <br/><br/>
 <img src="https://cdn.discordapp.com/attachments/485464301516095509/942121112706359356/explorer_bandeau.png" alt="Itasecoin" width="700"/>
 </h1>
@@ -34,8 +34,31 @@ Live demo available at [explorer.itasecoin.com](https://explorer.itasecoin.com).
 
 ## Instruction
 
+```bash
+npm install -g itasecoinexplorer
+itasecoinexplorer
+```
 
+If you're running on mainnet with the default datadir and port, this should basically work.
+Open [http://127.0.0.1:3002/](http://127.0.0.1:3002/) to view the explorer.
 
+You may set configuration options in a `.env` file or using CLI args.
+See [configuration](#configuration) for details.
+
+## Configuration
+
+Configuration options may be passed as environment variables
+or by creating an env file at `~/.config/itasecoinexplorer.env`
+or at `.env` in the working directory.
+See [.env-sample](.env-sample) for a list of the options and details for formatting `.env`.
+
+You may also pass options as CLI arguments, for example:
+
+```bash
+itasecoinexplorer --port 8080 --bitcoind-port 29045 --bitcoind-cookie ~/.itasecoin/regtest/.cookie
+```
+
+See `itasecoinexplorer --help` for the full list of CLI options.
 
 ## Contributing
 
@@ -43,7 +66,7 @@ If you find a bug or experience issues with this software, please report it
 using the [issue system](https://github.com/milopms/itasecoin/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5Bbug%5D+).
 
 Please see [the contribution guide](CONTRIBUTING.md) to see how you can
-participate in the development of Itasecore. There are often
+participate in the development of Itasecoin Explorer. There are often
 [topics seeking help](https://github.com/milopms/itasecoin/labels/help%20wanted)
 where your contributions will have high impact and get very appreciation.
 
@@ -60,12 +83,12 @@ Here are some places to visit:
 
 ## Frequently Asked Questions 
 
-Do you have a question about Itasecore? Your answer may be in the
+Do you have a question about Itasecoin Explorer? Your answer may be in the
 [FAQ](doc/FAQ.md) or the
-[Q&A section](https://github.com/milopms/itasecoin/discussions/categories/q-a)
+[Q&A section](https://github.com/milopms/itasecoinexplorer/discussions/categories/q-a)
 of the discussion board!
 
 ## License
-Itasecore is released under the terms of the MIT license. See
+Itasecoin Explorer is released under the terms of the MIT license. See
 [COPYING](COPYING) for more information or see
 [opensource.org](https://opensource.org/licenses/MIT)
