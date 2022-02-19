@@ -1,25 +1,11 @@
 {
-  "name": "dvt-rpc-explorer",
-  "version": "0.0.2",
-  "description": "Self-hosted DeVault blockchain explorer",
-  "private": false,
-  "bin": "bin/cli.js",
-  "scripts": {
-    "start": "node ./bin/www",
-    "refresh-mining-pool-configs": "node ./bin/refresh-mining-pool-configs.js"
+  "bin": {
+    "itasecoinexplorer": "bin/cli.js"
   },
-  "keywords": [
-    "devault",
-    "blockchain",
-    "decentralized economy",
-    "community governance"
-  ],
-  "author": "Proteus <proteus@devault.cc>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/proteanx/dvt-rpc-explorer.git"
+  "bugs": {
+    "url": "https://github.com/milopms/itasecoinexplorer/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "async": "^3.1.0",
     "basic-auth": "^2.0.1",
@@ -27,14 +13,13 @@
     "bitcoinjs-lib": "^5.1.7",
     "bluebird": "^3.7.2",
     "body-parser": "~1.19.0",
-    "dvtaddrjs": "~0.3.10",
     "cookie-parser": "^1.4.4",
     "crypto-js": "3.1.9-1",
     "csurf": "^1.10.0",
     "debug": "~4.1.1",
     "decimal.js": "^10.2.0",
     "dotenv": "^8.2.0",
-    "electrum-client": "github:chaintools/node-electrum-client#43a999036f9c5",
+    "dvtaddrjs": "~0.3.10",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "jstransformer-markdown-it": "^2.1.0",
@@ -51,8 +36,35 @@
     "serve-favicon": "^2.5.0",
     "simple-git": "^1.129.0"
   },
+  "deprecated": false,
+  "description": "Self-hosted Itasecoin blockchain explorer",
   "devDependencies": {
     "less": "3.9.0",
     "npm-run-all": "^4.1.5"
-  }
+  },
+  "homepage": "itasecoin.com",
+  "keywords": [
+    "itasecoin",
+    "blockchain",
+    "decentralized economy",
+    "decentralized",
+    "decentralized network",
+    "itasecore",
+    "milopms",
+    "currency",
+    "cryptocurrency",
+    "crypto"
+  ],
+  "license": "MIT",
+  "name": "itasecoinexplorer",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milopms/itasecoinexplorer.git"
+  },
+  "scripts": {
+    "refresh-mining-pool-configs": "node ./bin/refresh-mining-pool-configs.js",
+    "start": "node ./bin/www"
+  },
+  "version": "1.0.3"
 }

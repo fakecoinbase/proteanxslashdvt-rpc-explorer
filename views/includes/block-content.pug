@@ -86,22 +86,6 @@ div(class="tab-content")
 									- var currencyValue = new Decimal(blockRewardMax).minus(coinbaseTxTotalOutputValue);
 									include ./value-display.pug
 
-						if (result.getblock.weight)
-							div(class="row")
-								div(class="summary-split-table-label") Weight
-								div(class="summary-split-table-content monospace")
-									span(style="") #{result.getblock.weight.toLocaleString()} wu 
-
-									span(class="text-muted")  (#{new Decimal(100 * result.getblock.weight / coinConfig.maxBlockWeight).toDecimalPlaces(2)}% full)
-
-									- var fullPercent = new Decimal(100 * result.getblock.weight / coinConfig.maxBlockWeight).toDecimalPlaces(0);
-
-									div(class="row")
-										div(class="col-md-10 col-lg-8 col-12")
-											div(class="progress my-1 mr-2", style="height: 4px;")
-												div(class="progress-bar", role="progressbar", style=("width: " + fullPercent + "%;"), aria-valuenow=parseInt(100 * result.getblock.weight / coinConfig.maxBlockWeight), aria-valuemin="0" ,aria-valuemax="100")
-									
-
 						div(class="row")
 							div(class="summary-split-table-label") Size
 							div(class="summary-split-table-content monospace") #{result.getblock.size.toLocaleString()} bytes
@@ -169,19 +153,6 @@ div(class="tab-content")
 								
 								span(class="text-muted")  (#{result.getblock.chainwork.replace(/^0+/, '')})
 
-						if (result.getblock.miner)
-							div(class="row")
-								div(class="summary-split-table-label") Miner
-								div(class="summary-split-table-content monospace")
-									if (result.getblock.miner)
-										span #{result.getblock.miner.name} 
-										if (result.getblock.miner.identifiedBy)
-											span(data-toggle="tooltip", title=("Identified by: " + result.getblock.miner.identifiedBy))
-												i(class="fas fa-info-circle")
-									else
-										span ? 
-										span(data-toggle="tooltip", title="Unable to identify miner")
-											i(class="fas fa-info-circle")
 									
 
 		div(class="card mb-3 shadow-sm")

@@ -1,6 +1,6 @@
 body {
 	font-size: 14px;
-	font-family: "Ubuntu", sans-serif;
+	font-family: "Poetsen One";
 	/*font: 14px 'Open Sans', "Lucida Grande", Helvetica, Arial, sans-serif;*/
 }
 
@@ -9,15 +9,16 @@ hr {
 }
 
 img.header-image {
-	margin-top: -10px;
-	margin-bottom: -5px;
-	width: 30px;
-	height: 30px;
+	margin-top: -7px;
+	margin-bottom: -2px;
+	width: 220px;
+	height: 60px;
 	margin-right: 10px;
 }
 
 code, .monospace {
-	font-family: "Source Code Pro", monospace;
+	font-size: 14px;
+	font-family: "Poetsen One";
 }
 
 .card-body {

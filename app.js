@@ -7,7 +7,7 @@ var path = require('path');
 var dotenv = require("dotenv");
 var fs = require('fs');
 
-var configPaths = [ path.join(os.homedir(), '.config', 'dvt-rpc-explorer.env'), path.join(process.cwd(), '.env') ];
+var configPaths = [ path.join(os.homedir(), '.config', 'itasecoinexplorer.env'), path.join(process.cwd(), '.env') ];
 configPaths.filter(fs.existsSync).forEach(path => {
   console.log('Loading env file:', path);
   dotenv.config({ path });
@@ -16,10 +16,10 @@ configPaths.filter(fs.existsSync).forEach(path => {
 // debug module is already loaded by the time we do dotenv.config
 // so refresh the status of DEBUG env var
 var debug = require("debug");
-debug.enable(process.env.DEBUG || "dvtexp:app,dvtexp:error");
+debug.enable(process.env.DEBUG || "itasecoinexp:app,itasecoinexp:error");
 
-var debugLog = debug("dvtexp:app");
-var debugPerfLog = debug("dvtexp:actionPerformace");
+var debugLog = debug("itasecoinexp:app");
+var debugPerfLog = debug("itasecoinexp:actionPerformace");
 
 var express = require('express');
 var favicon = require('serve-favicon');
@@ -121,7 +121,7 @@ function loadMiningPoolConfigs() {
 
 function getSourcecodeProjectMetadata() {
   var options = {
-    url: "https://api.github.com/repos/proteanx/dvt-rpc-explorer",
+    url: "https://api.github.com/repos/milopms/itasecoinexplorer",
     headers: {
       'User-Agent': 'request'
     }
@@ -201,12 +201,10 @@ function verifyRpcConnection() {
 }
 
 function onRpcConnectionVerified(getnetworkinfo, getblockchaininfo) {
-  // localservicenames introduced in 0.19
   var services = getnetworkinfo.localservicesnames ? ("[" + getnetworkinfo.localservicesnames.join(", ") + "]") : getnetworkinfo.localservices;
 
   debugLog(`RPC Connected: version=${getnetworkinfo.version} (${getnetworkinfo.subversion}), protocolversion=${getnetworkinfo.protocolversion}, chain=${getblockchaininfo.chain}, services=${services}`);
 
-  // load historical/fun items for this chain
   loadHistoricalDataForChain(global.activeBlockchain);
 
   if (global.activeBlockchain == "main") {

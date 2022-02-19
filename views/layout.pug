@@ -50,27 +50,7 @@ html(lang="en")
                 li.nav-item
                   a.nav-link.text-warning(title=`Current node's chain: ${global.activeBlockchain}` data-toggle="tooltip") [#{chainName}]
 
-              if (config.siteTools)
-                li(class="nav-item dropdown")
-                  a(class="nav-link dropdown-toggle", href="javascript:void(0)", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
-                    span  Tools
-                  div(class="dropdown-menu shadow", aria-label="Tools Items")
-                    each item in config.siteTools
-                      a(class="dropdown-item", href=item.url)
-                        i(class=item.fontawesome, style="width: 20px; margin-right: 10px;")
-                        span  #{item.name}
 
-              if (config.site.header.dropdowns)
-                each dropdown, ddIndex in config.site.header.dropdowns
-                  li(class="nav-item dropdown")
-                    a(class="nav-link dropdown-toggle", href="javascript:void(0)", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
-                      span  #{dropdown.title}
-                    div(class="dropdown-menu shadow", aria-label=(dropdown.title + " Items"))
-                      each dropdownLink in dropdown.links
-                        a(class="dropdown-item", href=dropdownLink.url)
-                          if (dropdownLink.imgUrl)
-                            img(src=dropdownLink.imgUrl, style="width: 24px; height: 24px; margin-right: 8px;", alt=dropdownLink.name)
-                          span  #{dropdownLink.name}
 
 
             form(method="post", action="/search", class="form-inline mr-3")
@@ -145,16 +125,16 @@ html(lang="en")
             dl
               dt Source
               dd
-                a(href="https://github.com/proteanx/dvt-rpc-explorer") github.com/proteanx/dvt-rpc-explorer
+                a(href="https://github.com/milopms/itasecoinexplorer") github.com/milopms/itasecoinexplorer
 
                 if (global.sourcecodeProjectMetadata)
                   div(class="mt-2")
-                    a(href="https://github.com/proteanx/dvt-rpc-explorer", class="btn btn-primary btn-sm mr-3 mb-1 text-decoration-none")
+                    a(href="https://github.com/milopms/itasecoinexplorer", class="btn btn-primary btn-sm mr-3 mb-1 text-decoration-none")
                       i(class="fas fa-star mr-2")
                       span(class="mr-2") Star
                       span(class="badge bg-white text-dark") #{global.sourcecodeProjectMetadata.stargazers_count}
 
-                    a(href="https://github.com/proteanx/dvt-rpc-explorer/fork", class="btn btn-primary btn-sm mr-3 mb-1 text-decoration-none")
+                    a(href="https://github.com/milopms/itasecoinexplorer/fork", class="btn btn-primary btn-sm mr-3 mb-1 text-decoration-none")
                       i(class="fas fa-code-branch mr-2")
                       span(class="mr-2") Fork
                       span(class="badge bg-white text-dark") #{global.sourcecodeProjectMetadata.forks_count}
@@ -174,20 +154,6 @@ html(lang="en")
                     each demoSiteCoin in demoSiteCoins
                       a(href=coinConfigs[demoSiteCoin].demoSiteUrl, class="mr-2", title=coinConfigs[demoSiteCoin].siteTitle)
                         img(src=("/img/logo/" + demoSiteCoin.toLowerCase() + ".svg"), alt=demoSiteCoin.toLowerCase())
-
-          div(class="col-md-7 text-md-right")
-            dl
-              dt App Details
-              dd
-                span version: #{global.appVersion}
-                if (sourcecodeVersion)
-                  br
-                  // the following is not a trailing spaces
-                  span commit: 
-                    a(href=("https://github.com/proteanx/dvt-rpc-explorer/commit/" + sourcecodeVersion)) #{sourcecodeVersion}
-
-                br
-                span updated: #{sourcecodeDate}
 
     script(src="/js/jquery.min.js", integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=")
     script(src="/js/popper.min.js", integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut")

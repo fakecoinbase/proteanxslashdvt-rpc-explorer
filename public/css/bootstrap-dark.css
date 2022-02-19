@@ -150,15 +150,18 @@ sup {
 	top: -.5em;
 }
 
+
 a {
-	color: #5aa8fc;
-	text-decoration: none;
+    background-image: linear-gradient(rgba(42,113,244,2), rgba(66,72,209,2));
+    text-decoration: none;
 	background-color: transparent;
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
 }
 
 a:hover {
-	color: #0f80fb;
-	text-decoration: underline;
+    background-image: linear-gradient(rgba(54,122,247,2), rgba(75,82,242,2));
+
 }
 
 a:not([href]):not([tabindex]) {
@@ -2225,19 +2228,16 @@ fieldset:disabled a.btn {
 
 .btn-primary {
 	color: #f8f9fa;
-	background-color: #5aa8fc;
-	border-color: #5aa8fc;
+	background-color: rgba(42,113,244,2);
+	border-color: rgba(42,113,244,2);
 }
 
 .btn-primary:hover {
 	color: #fff;
-	background-color: #3494fb;
-	border-color: #288efb;
+	background-color: rgba(54,122,247,2);
+	border-color: rgba(54,122,247,2);
 }
 
-.btn-primary:focus, .btn-primary.focus {
-	box-shadow: 0 0 0 0.2rem rgba(114, 180, 252, 0.5);
-}
 
 .btn-primary.disabled, .btn-primary:disabled {
 	color: #f8f9fa;
@@ -2257,11 +2257,7 @@ fieldset:disabled a.btn {
 	box-shadow: 0 0 0 0.2rem rgba(114, 180, 252, 0.5);
 }
 
-.btn-secondary {
-	color: #fff;
-	background-color: #282d33;
-	border-color: #282d33;
-}
+
 
 .btn-secondary:hover {
 	color: #fff;
@@ -6258,7 +6254,7 @@ button.bg-dark:focus {
 }
 
 .border-primary {
-	border-color: #5aa8fc !important;
+	border-color: rgba(42,113,244,2) !important;
 }
 
 .border-secondary {

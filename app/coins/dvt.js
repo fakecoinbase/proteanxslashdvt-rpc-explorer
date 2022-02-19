@@ -4,18 +4,25 @@ Decimal8 = Decimal.clone({ precision:8, rounding:8 });
 var currencyUnits = [
   {
     type:"native",
-    name:"DVT",
+    name:"ITASE",
     multiplier:1,
     default:true,
-    values:["", "dvt", "DVT"],
+    values:["", "ITASE"],
     decimalPlaces:8
   },
   {
     type:"native",
-    name:"spocks",
+    name:"itasoshis",
     multiplier:1000,
-    values:["spocks"],
+    values:["itasoshis"],
     decimalPlaces:5
+  },
+  {
+    type:"native",
+    name:"novas",
+    multiplier:1000000,
+    values:["novas"],
+    decimalPlaces:2
   },
   {
     type:"exchanged",
@@ -36,14 +43,13 @@ var currencyUnits = [
 ];
 
 module.exports = {
-  name:"DeVault",
+  name:"Itasecoin Explorer",
   ticker:"DVT",
-  logoUrl:"/img/logo/dvt.svg",
-  siteTitle:"DeVault Explorer",
-  siteDescriptionHtml:"<b>DVT Explorer</b> is <a href='https://github.com/proteanx/dvt-rpc-explorer). If you run your own [DeVault Full Node](https://www.github.com/devaultcrypto/devault), **DVT Explorer** can easily run alongside it, communicating via RPC calls. See the project [ReadMe](https://github.com/proteanx/dvt-rpc-explorer) for a list of features and instructions for running.",
-  nodeTitle:"DeVault Full Node",
-  nodeUrl:"https://www.github.com/devaultcrypto/devault",
-  demoSiteUrl: "https://exploredvt.com",
+  logoUrl:"/img/logo/dvt.png",
+  siteDescriptionHtml:"<b>DVT Explorer</b> is <a href='https://github.com/milopms/itasecoinexplorer). If you run your own [Itasecore Full Node](https://www.github.com/milopms/itasecoin), **Itasecoin Explorer** can easily run alongside it, communicating via RPC calls. See the project [Readme](https://github.com/milopms/itasecoinexplorer) for a list of features and instructions for running.",
+  nodeTitle:"Itasecore Full Node",
+  nodeUrl:"https://www.github.com/milopms/itasecoin",
+  demoSiteUrl: "https://explorer.itasecoin.com",
   miningPoolsConfigUrls:[
     "https://raw.githubusercontent.com/proteanx/dvt-rpc-explorer/master/public/txt/mining-pools-configs/DVT/0.json",
     "https://raw.githubusercontent.com/proteanx/dvt-rpc-explorer/master/public/txt/mining-pools-configs/DVT/1.json"
